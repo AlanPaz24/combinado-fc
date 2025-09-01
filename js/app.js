@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const btn = document.querySelector(".btn-warning");
   if (btn) {
     btn.addEventListener("click", () => {
-      alert("El próximo partido es el sábado a las 18:00 🏟️");
+      alert("El próximo partido es el Martes a las 20:30 🏟️");
     });
   }
 });
