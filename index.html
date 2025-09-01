@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Combinado FC</title>
+  <meta name="description" content="Sitio oficial de Combinado FC – resultados, noticias y tienda." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --cfc-navy:#053b11;
+      --cfc-gold:#ffffff;
+      --cfc-ink:#053a01;
+      --cfc-cloud:#f7f7f5;
+    }
+    html,body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif; color:#111; background:var(--cfc-cloud)}
+    .brand{font-family:'Bebas Neue', sans-serif; letter-spacing:.5px}
+    .navbar{backdrop-filter:saturate(140%) blur(6px);}
+    .nav-link,.navbar-brand{color:#fff!important}
+    .navbar-dark{background:linear-gradient(180deg, rgba(1, 63, 27, 0.96), rgba(11,27,51,.7))}
+
+    /* HERO */
+    .hero{min-height:56vh; display:grid; place-items:center; color:#fff; position:relative;}
+    .hero::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(11,27,51,.65), rgba(11,27,51,.85));}
+    .hero > .container{position:relative; z-index:1}
+    .hero-title{font-family:'Bebas Neue', sans-serif; font-size:clamp(2.4rem,5vw,5rem); line-height:1; text-transform:uppercase;}
+    .hero-sub{font-weight:600; color:var(--cfc-gold)}
+
+    /* Cards */
+    .cfc-card{border:0; border-radius:1.25rem; overflow:hidden; box-shadow:0 10px 28px rgba(11,27,51,.08)}
+    .cfc-card .card-header{background:var(--cfc-navy); color:#fff; border:0}
+    .chip{display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .6rem; border-radius:999px; background:#ffffff; color:#0b1b33; font-weight:600; font-size:.9rem}
+    .chip i{color:var(--cfc-gold)}
+
+    .section-title{font-family:'Bebas Neue', sans-serif; letter-spacing:.5px; color:var(--cfc-ink);}
+
+    /* Shop */
+    .product-card{transition:transform .18s ease, box-shadow .18s ease; cursor:pointer}
+    .product-card:hover{transform:translateY(-4px); box-shadow:0 14px 28px rgba(0, 233, 51, 0.12)}
+    .price{font-weight:700}
+    .tag{font-size:.75rem; font-weight:700; color:var(--cfc-navy); background:rgba(1, 165, 15, 0.15); padding:.2rem .5rem; border-radius:999px}
+
+    /* Footer */
+    footer{background:var(--cfc-navy); color:#eaeaea}
+    footer a{color:#eaeaea; text-decoration:none}
+    footer a:hover{color:#fff; text-decoration:underline}
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <nav class="navbar navbar-dark navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+        <span class="d-inline-flex align-items-center justify-content-center rounded-3" style="width:34px;height:34px;background:var(--cfc-gold);color:var(--cfc-navy);font-weight:900">C</span>
+        <span class="brand fs-3">COMBINADO FC</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div id="nav" class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#calendario">Calendario</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tienda">Tienda</a></li>
+          <li class="nav-item ms-lg-3">
+            <button class="btn btn-light rounded-pill" data-bs-toggle="offcanvas" data-bs-target="#cart">
+              <i class="bi bi-bag"></i>
+              <span class="ms-1">Carrito</span>
+              <span class="badge text-bg-warning ms-2" id="cart-count">0</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="inicio" class="hero" style="background:url('https://picsum.photos/seed/combinadofc/1600/700') center/cover no-repeat fixed;">
+    <div class="container py-5">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-10">
+          <div class="chip mb-3"><i class="bi bi-stars"></i> La pasión que nos une</div>
+          <h1 class="hero-title mb-2">COMBINADO FC</h1>
+          <p class="lead hero-sub">Temporada 2025</p>
+          <a href="#tienda" class="btn btn-warning btn-lg rounded-pill fw-bold mt-3"><i class="bi bi-shop me-1"></i> Ir a la tienda</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="mt-5 pt-4">
+    <!-- INFO STRIP -->
+    <section class="container py-4">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card cfc-card h-100">
+            <div class="card-header">Próximo partido</div>
+            <div class="card-body">
+              <p class="mb-1 text-muted" id="next-date">—</p>
+              <h5 class="mb-2" id="next-match">Combinado FC vs —</h5>
+              <div class="d-flex align-items-center gap-3">
+                <span class="badge text-bg-success" id="next-status">Por jugar</span>
+                <span><i class="bi bi-geo-alt"></i> <span id="next-venue">—</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card cfc-card h-100">
+            <div class="card-header">Último resultado</div>
+            <div class="card-body">
+              <h5 class="mb-1" id="last-score">—</h5>
+              <p class="text-muted" id="last-note">—</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card cfc-card h-100">
+            <div class="card-header">Últimas noticias</div>
+            <div class="card-body">
+              <ul class="list-unstyled m-0" id="news-list"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORIA + DESTACADOS -->
+    <section class="container py-5">
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+          <div class="card cfc-card h-100">
+            <div class="card-body p-4 p-lg-5">
+              <h2 class="section-title mb-3">Nuestra historia</h2>
+              <p>Combinado FC nació en 2024 con una idea simple: jugar al fútbol entre amigos, con orden y mucha garra. En poco tiempo armamos un grupo sólido y una identidad clara: intensidad, respeto y buen juego.</p>
+              <p class="mb-0">Este sitio concentra partidos, resultados, fotos y la tienda del club. ¡Bienvenido!</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="row g-4">
+            <div class="col-12">
+              <div class="card cfc-card">
+                <div class="row g-0 align-items-center">
+                  <div class="col-md-5">
+                    <img src="https://picsum.photos/seed/cfc-jersey/640/420" class="img-fluid rounded-start" alt="Home Jersey"/>
+                  </div>
+                  <div class="col-md-7">
+                    <div class="card-body">
+                      <h5 class="card-title">Camiseta Home 24/25</h5>
+                      <p class="card-text small text-muted">Edición limitada. Tela respirable, escudo bordado.</p>
+                      <div class="d-flex align-items-center gap-3">
+                        <span class="price h5 mb-0">$18.00</span>
+                        <button class="btn btn-dark rounded-pill add-to-cart" data-id="jersey-home">Agregar al carrito</button>
+                        <span class="tag">DESTACADO</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card cfc-card h-100">
+                <img src="https://picsum.photos/seed/cfc-action1/640/420" class="card-img-top" alt="Acción 1"/>
+                <div class="card-body">
+                  <h6 class="card-title">Jugador del mes: Raúl “Titán” Castro</h6>
+                  <p class="card-text small text-muted">Entrega total y goles clave en la última fecha.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card cfc-card h-100">
+                <img src="https://picsum.photos/seed/cfc-action2/640/420" class="card-img-top" alt="Acción 2"/>
+                <div class="card-body">
+                  <h6 class="card-title">Mejores momentos – Partido 10</h6>
+                  <p class="card-text small text-muted">Resumen fotográfico del triunfo 4–2.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIENDA RÁPIDA -->
+    <section id="tienda" class="container py-5">
+      <div class="d-flex align-items-end justify-content-between mb-3">
+        <h2 class="section-title m-0">Tienda</h2>
+        <a class="btn btn-outline-dark rounded-pill" href="#" aria-disabled="true">Ver todo (próx.)</a>
+      </div>
+      <div class="row g-4">
+        <!-- Jerseys -->
+        <div class="col-12"><h5 class="text-uppercase text-muted">Jerseys</h5></div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card product-card cfc-card h-100">
+            <img class="card-img-top" src="https://picsum.photos/seed/jerseyhome/400/300" alt="Home">
+            <div class="card-body">
+              <h6 class="card-title">Home 24/25</h6>
+              <p class="text-muted small">Escudo bordado</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">$18.00</span>
+                <button class="btn btn-dark btn-sm rounded-pill add-to-cart" data-id="jersey-home">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card product-card cfc-card h-100">
+            <img class="card-img-top" src="https://picsum.photos/seed/jerseyaway/400/300" alt="Away">
+            <div class="card-body">
+              <h6 class="card-title">Away 24/25</h6>
+              <p class="text-muted small">Versión visitante</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">$18.00</span>
+                <button class="btn btn-dark btn-sm rounded-pill add-to-cart" data-id="jersey-away">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shorts -->
+        <div class="col-12 pt-2"><h5 class="text-uppercase text-muted">Shorts</h5></div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card product-card cfc-card h-100">
+            <img class="card-img-top" src="https://picsum.photos/seed/shortsmen/400/300" alt="Shorts Men">
+            <div class="card-body">
+              <h6 class="card-title">Shorts Hombres</h6>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">$18.00</span>
+                <button class="btn btn-dark btn-sm rounded-pill add-to-cart" data-id="shorts-men">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card product-card cfc-card h-100">
+            <img class="card-img-top" src="https://picsum.photos/seed/shortswomen/400/300" alt="Shorts Women">
+            <div class="card-body">
+              <h6 class="card-title">Shorts Mujeres</h6>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">$18.00</span>
+                <button class="btn btn-dark btn-sm rounded-pill add-to-cart" data-id="shorts-women">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hats -->
+        <div class="col-12 pt-2"><h5 class="text-uppercase text-muted">Gorros</h5></div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card product-card cfc-card h-100">
+            <img class="card-img-top" src="https://picsum.photos/seed/beanie/400/300" alt="Beanie">
+            <div class="card-body">
+              <h6 class="card-title">Beanie Invierno</h6>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">$18.00</span>
+                <button class="btn btn-dark btn-sm rounded-pill add-to-cart" data-id="beanie">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card product-card cfc-card h-100">
+            <img class="card-img-top" src="https://picsum.photos/seed/cap/400/300" alt="Cap">
+            <div class="card-body">
+              <h6 class="card-title">Gorra Snapback</h6>
+              <div class="d-flex align-items-center justify-content-between">
+                <span class="price">$14.00</span>
+                <button class="btn btn-dark btn-sm rounded-pill add-to-cart" data-id="cap">Agregar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-5 pt-5 pb-4">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h5 class="brand text-white">COMBINADO FC</h5>
+          <p class="mb-1">Buenos Aires, Argentina</p>
+          <p class="mb-0">© <span id="year"></span> Combinado FC. Todos los derechos reservados.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <a class="me-3" href="#"><i class="bi bi-instagram"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-facebook"></i></a>
+          <a class="me-3" href="#"><i class="bi bi-twitter-x"></i></a>
+          <a class="" href="#"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART (Offcanvas) -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cart">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">Carrito</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column">
+      <ul class="list-group list-group-flush mb-3" id="cart-items"></ul>
+      <div class="mt-auto">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <strong>Total</strong>
+          <strong id="cart-total">$0.00</strong>
+        </div>
+        <div class="d-flex gap-2">
+          <button id="clear-cart" class="btn btn-outline-secondary w-50">Vaciar</button>
+          <button class="btn btn-dark w-50" disabled>Checkout (demo)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // ======= DATA (demo) =======
+    const PRODUCTS = {
+      'jersey-home': { id:'jersey-home', name:'Camiseta Home 24/25', price:18.00, img:'https://picsum.photos/seed/jerseyhome/80/60' },
+      'jersey-away': { id:'jersey-away', name:'Camiseta Away 24/25', price:18.00, img:'https://picsum.photos/seed/jerseyaway/80/60' },
+      'shorts-men': { id:'shorts-men', name:'Shorts Hombres', price:18.00, img:'https://picsum.photos/seed/shortsmen/80/60' },
+      'shorts-women': { id:'shorts-women', name:'Shorts Mujeres', price:18.00, img:'https://picsum.photos/seed/shortswomen/80/60' },
+      'beanie': { id:'beanie', name:'Beanie Invierno', price:18.00, img:'https://picsum.photos/seed/beanie/80/60' },
+      'cap': { id:'cap', name:'Gorra Snapback', price:14.00, img:'https://picsum.photos/seed/cap/80/60' },
+    };
+
+    const SCHEDULE = {
+      next: { date: 'Vie 06 Sep · 18:30', vs: 'Fénix FC', venue: 'Cancha Basora', status: 'Por jugar' },
+      last: { score: 'Combinado FC 4 – 2 Fénix FC', note: 'Gran triunfo con doblete de Castro.' }
+    };
+
+    const NEWS = [
+      'Nuevo sponsor confirmado para la temporada.',
+      'Se abre inscripción para pruebas de jugadores.',
+      'Galería del último partido disponible.'
+    ];
+
+    // ======= STATE =======
+    const CART_KEY = 'cfc_cart_v1';
+    let cart = JSON.parse(localStorage.getItem(CART_KEY) || '{}'); // {productId: qty}
+
+    // ======= HELPERS =======
+    const fmt = n => `$${n.toFixed(2)}`;
+
+    function saveCart(){ localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+
+    function cartCount(){ return Object.values(cart).reduce((a,b)=>a+b,0); }
+
+    function cartTotal(){
+      return Object.entries(cart).reduce((sum,[id,qty])=> sum + PRODUCTS[id].price * qty, 0);
+    }
+
+    function renderCart(){
+      const ul = document.getElementById('cart-items');
+      ul.innerHTML = '';
+      for(const [id, qty] of Object.entries(cart)){
+        const p = PRODUCTS[id];
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex align-items-center justify-content-between';
+        li.innerHTML = `
+          <div class="d-flex align-items-center gap-3">
+            <img src="${p.img}" alt="${p.name}" width="56" height="42" class="rounded border"/>
+            <div>
+              <div class="fw-semibold">${p.name}</div>
+              <div class="small text-muted">${qty} x ${fmt(p.price)}</div>
+            </div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <button class="btn btn-sm btn-outline-secondary" data-qty="-1" data-id="${id}">-</button>
+            <button class="btn btn-sm btn-outline-secondary" data-qty="1" data-id="${id}">+</button>
+            <button class="btn btn-sm btn-outline-danger" data-remove="${id}"><i class="bi bi-x-lg"></i></button>
+          </div>`;
+        ul.appendChild(li);
+      }
+      document.getElementById('cart-count').textContent = cartCount();
+      document.getElementById('cart-total').textContent = fmt(cartTotal());
+    }
+
+    function addToCart(id){ cart[id] = (cart[id]||0)+1; saveCart(); renderCart(); }
+
+    // ======= INIT =======
+    document.addEventListener('DOMContentLoaded', () => {
+      // hero year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // schedule + news
+      document.getElementById('next-date').textContent = SCHEDULE.next.date;
+      document.getElementById('next-match').textContent = `Combinado FC vs ${SCHEDULE.next.vs}`;
+      document.getElementById('next-venue').textContent = SCHEDULE.next.venue;
+      document.getElementById('next-status').textContent = SCHEDULE.next.status;
+      document.getElementById('last-score').textContent = SCHEDULE.last.score;
+      document.getElementById('last-note').textContent = SCHEDULE.last.note;
+      const ul = document.getElementById('news-list');
+      NEWS.forEach(n=>{ const li=document.createElement('li'); li.className='mb-2'; li.textContent=n; ul.appendChild(li); });
+
+      // cart
+      renderCart();
+      document.querySelectorAll('.add-to-cart').forEach(btn=>{
+        btn.addEventListener('click',()=> addToCart(btn.dataset.id));
+      });
+
+      document.getElementById('cart-items').addEventListener('click', (e)=>{
+        const idAdd = e.target.closest('[data-qty="1"]')?.dataset.id;
+        const idSub = e.target.closest('[data-qty="-1"]')?.dataset.id;
+        const idRem = e.target.closest('[data-remove]')?.dataset.remove;
+        if(idAdd){ cart[idAdd] = (cart[idAdd]||0)+1; }
+        if(idSub){ cart[idSub] = Math.max(0,(cart[idSub]||0)-1); if(cart[idSub]===0) delete cart[idSub]; }
+        if(idRem){ delete cart[idRem]; }
+        saveCart(); renderCart();
+      });
+
+      document.getElementById('clear-cart').addEventListener('click', ()=>{ cart={}; saveCart(); renderCart(); });
+
+      // smooth scroll for in-page links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const id=this.getAttribute('href');
+          if(id.length>1){ e.preventDefault(); document.querySelector(id)?.scrollIntoView({behavior:'smooth'}); }
+        })
+      })
+    });
+  </script>
+</body>
+</html>
