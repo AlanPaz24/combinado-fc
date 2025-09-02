@@ -112,3 +112,215 @@ header {
     margin: 5px 0 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+/* --- Estilos para las Secciones de Contenido Principal --- */
+main {
+    padding: 40px 0;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: var(--color-principal);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+main h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--color-acento);
+    margin: 10px auto 0;
+}
+
+/* --- Estilos para la Tarjeta de Próximo Partido --- */
+.next-match {
+    margin-bottom: 50px;
+}
+
+.match-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.match-card .team-info,
+.match-card .opponent-info {
+    text-align: center;
+    margin: 0 20px;
+}
+
+.match-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.match-card .vs {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--color-acento);
+    margin: 0 40px;
+}
+
+.match-details {
+    display: flex;
+    align-items: center;
+}
+
+.match-date {
+    text-align: center;
+    margin-left: 40px;
+    color: #666;
+}
+
+.match-date p {
+    margin: 5px 0;
+}
+
+/* --- Estilos para la Sección de Noticias --- */
+.latest-news {
+    text-align: center;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-10px);
+}
+
+.news-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-item h3 {
+    padding: 15px 15px 0;
+    font-size: 1.2em;
+    color: var(--color-principal);
+}
+
+.news-item p {
+    padding: 0 15px;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #555;
+}
+
+.news-item a {
+    display: inline-block;
+    padding: 10px 15px 15px;
+    color: var(--color-acento);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* --- Estilos para el Footer --- */
+footer {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding-top: 50px;
+    font-size: 0.9em;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.footer-info,
+.footer-links,
+.footer-social {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.logo-footer img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo-footer h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.footer-info p {
+    line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    margin-top: 0;
+    font-size: 1.2em;
+    border-bottom: 2px solid var(--color-acento);
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.footer-links ul,
+.footer-social ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links a,
+.footer-social a {
+    text-decoration: none;
+    color: var(--color-texto-claro);
+    display: block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+    color: var(--color-acento);
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px 0;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 0.8em;
+}
