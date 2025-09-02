@@ -1,326 +1,199 @@
-/* Paleta de colores de Combinado FC */
-:root {
-    --color-principal: #004d40; /* Verde oscuro */
-    --color-acento: #ffc107; /* Amarillo/Dorado */
-    --color-secundario: #333333; /* Negro */
-    --color-texto-claro: #ffffff; /* Blanco */
-    --color-fondo-claro: #f0f2f5; /* Gris claro */
+/* ---------- ESTILOS GENERALES ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Estilos generales del cuerpo de la página */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--color-fondo-claro);
-    color: var(--color-secundario);
+  background-color: #0f2d1c; /* verde oscuro de fondo */
+  color: #fff;
+  line-height: 1.6;
 }
 
-/* Contenedor principal para centrar el contenido */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+h1, h2, h3 {
+  font-weight: 700;
+  color: #f5c518; /* dorado */
+  text-transform: uppercase;
 }
 
-/* --- Estilos del Header --- */
-
-header {
-    background-color: var(--color-secundario);
-    color: var(--color-texto-claro);
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
 }
 
-.top-bar {
-    padding: 15px 0;
-    background-color: var(--color-principal);
-    border-bottom: 1px solid var(--color-acento);
+button {
+  background: #155834; /* verde medio */
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.3s;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: var(--color-texto-claro);
-    font-weight: bold;
-    font-size: 24px;
+button:hover {
+  background: #f5c518;
+  color: #0f2d1c;
+  font-weight: bold;
 }
 
-.logo img {
-    margin-right: 10px;
+/* ---------- NAVBAR ---------- */
+.navbar {
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.main-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+.navbar .logo {
+  height: 50px;
 }
 
-.main-nav li {
-    margin: 0 15px;
+.navbar nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
-.main-nav a {
-    text-decoration: none;
-    color: var(--color-texto-claro);
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: color 0.3s ease;
+.navbar nav a:hover {
+  color: #f5c518;
 }
 
-.main-nav a:hover {
-    color: var(--color-acento);
+/* ---------- HERO ---------- */
+.hero {
+  background: url("hero.jpg") center/cover no-repeat;
+  text-align: center;
+  padding: 120px 20px;
 }
 
-.header-icons a img {
-    width: 24px;
-    height: 24px;
-    margin-left: 20px;
-    filter: invert(1); /* Para que los iconos blancos se vean bien sobre el fondo oscuro */
+.hero h1 {
+  font-size: 3rem;
+  color: #f5c518;
 }
 
-.hero-section {
-    position: relative;
-    text-align: center;
-    color: white;
+.hero p {
+  font-size: 1.3rem;
+  margin: 15px 0;
+  color: #fff;
 }
 
-.hero-section img {
-    width: 100%;
-    height: auto;
-    display: block;
+.hero-buttons {
+  margin-top: 20px;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+/* ---------- EQUIPO ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.hero-text h1 {
-    font-size: 4em;
-    margin: 0;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+.card {
+  background: #1b1b1b;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: 0.3s;
 }
 
-.hero-text p {
-    font-size: 1.5em;
-    margin: 5px 0 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-/* --- Estilos para las Secciones de Contenido Principal --- */
-main {
-    padding: 40px 0;
+.card:hover {
+  transform: scale(1.05);
+  background: #155834;
 }
 
-main h2 {
-    text-align: center;
-    font-size: 2.5em;
-    color: var(--color-principal);
-    margin-bottom: 30px;
-    position: relative;
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 3px solid #f5c518;
 }
 
-main h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: var(--color-acento);
-    margin: 10px auto 0;
+/* ---------- CALENDARIO ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-/* --- Estilos para la Tarjeta de Próximo Partido --- */
-.next-match {
-    margin-bottom: 50px;
+th, td {
+  border: 1px solid #444;
+  padding: 12px;
+  text-align: center;
 }
 
-.match-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
-    margin: 0 auto;
+th {
+  background: #155834;
+  color: #fff;
 }
 
-.match-card .team-info,
-.match-card .opponent-info {
-    text-align: center;
-    margin: 0 20px;
+td {
+  background: #1b1b1b;
 }
 
-.match-card img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
+/* ---------- GALERÍA ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
-.match-card .vs {
-    font-size: 2em;
-    font-weight: bold;
-    color: var(--color-acento);
-    margin: 0 40px;
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
-.match-details {
-    display: flex;
-    align-items: center;
+.gallery img:hover {
+  transform: scale(1.05);
+  border: 3px solid #f5c518;
 }
 
-.match-date {
-    text-align: center;
-    margin-left: 40px;
-    color: #666;
+/* ---------- CONTACTO ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: auto;
 }
 
-.match-date p {
-    margin: 5px 0;
+input, textarea {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
 }
 
-/* --- Estilos para la Sección de Noticias --- */
-.latest-news {
-    text-align: center;
+textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+form button {
+  align-self: flex-start;
 }
 
-.news-item {
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    transition: transform 0.3s ease;
-}
-
-.news-item:hover {
-    transform: translateY(-10px);
-}
-
-.news-item img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.news-item h3 {
-    padding: 15px 15px 0;
-    font-size: 1.2em;
-    color: var(--color-principal);
-}
-
-.news-item p {
-    padding: 0 15px;
-    font-size: 0.9em;
-    line-height: 1.6;
-    color: #555;
-}
-
-.news-item a {
-    display: inline-block;
-    padding: 10px 15px 15px;
-    color: var(--color-acento);
-    font-weight: bold;
-    text-decoration: none;
-}
-
-/* --- Estilos para el Footer --- */
+/* ---------- FOOTER ---------- */
 footer {
-    background-color: var(--color-principal);
-    color: var(--color-texto-claro);
-    padding-top: 50px;
-    font-size: 0.9em;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px 40px;
-}
-
-.footer-info,
-.footer-links,
-.footer-social {
-    flex: 1;
-    min-width: 200px;
-    margin: 20px;
-}
-
-.logo-footer {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.logo-footer img {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-}
-
-.logo-footer h3 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.footer-info p {
-    line-height: 1.6;
-}
-
-.footer-links h4,
-.footer-social h4 {
-    margin-top: 0;
-    font-size: 1.2em;
-    border-bottom: 2px solid var(--color-acento);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-}
-
-.footer-links ul,
-.footer-social ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-links a,
-.footer-social a {
-    text-decoration: none;
-    color: var(--color-texto-claro);
-    display: block;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
-}
-
-.footer-links a:hover,
-.footer-social a:hover {
-    color: var(--color-acento);
-}
-
-.footer-bottom {
-    text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 20px 0;
-}
-
-.footer-bottom p {
-    margin: 0;
-    font-size: 0.8em;
+  background: #111;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #ccc;
 }

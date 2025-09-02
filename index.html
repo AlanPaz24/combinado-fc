@@ -1,135 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Combinado FC - Página Oficial</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combinado FC</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="top-bar">
-            <div class="container">
-                <a href="index.html" class="logo">
-                    <img src="https://via.placeholder.com/40x40/000000/FFFFFF?text=Logo" alt="Logo Combinado FC">
-                    <span>COMBINADO FC</span>
-                </a>
-                <nav class="main-nav">
-                    <ul>
-                        <li><a href="index.html">INICIO</a></li>
-                        <li><a href="equipo.html">EQUIPO</a></li>
-                        <li><a href="calendario.html">CALENDARIO & RESULTADOS</a></li>
-                        <li><a href="galeria.html">GALERÍA</a></li>
-                        <li><a href="noticias.html">NOTICIAS</a></li>
-                        <li><a href="tienda.html">TIENDA</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropbtn">CONTACTO</a>
-                            <div class="dropdown-content">
-                                <a href="#">Formulario</a>
-                                <a href="#">Redes Sociales</a>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header-icons">
-                    <a href="#" class="cart-icon">
-                        <img src="https://via.placeholder.com/24x24/000000/FFFFFF?text=🛒" alt="Carrito de compras">
-                    </a>
-                    <a href="#" class="user-icon">
-                        <img src="https://via.placeholder.com/24x24/000000/FFFFFF?text=⚙️" alt="Configuración de usuario">
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="hero-section">
-            <img src="https://via.placeholder.com/1500x500/000000/FFFFFF?text=IMAGEN+PRINCIPAL+DEL+EQUIPO" alt="Jugador de Combinado FC celebrando">
-            <div class="hero-text">
-                <h1>COMBINADO FC</h1>
-                <p>LA PASIÓN QUE NOS UNE</p>
-            </div>
-        </div>
-    </header>
-    <main>
-    <div class="main-content container">
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <img src="escudo.png" alt="Combinado FC" class="logo">
+    <nav>
+      <a href="#equipo">Equipo</a>
+      <a href="#calendario">Calendario</a>
+      <a href="#galeria">Galería</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-        <section class="next-match">
-            <h2>PRÓXIMO PARTIDO</h2>
-            <div class="match-card">
-                <div class="team-info">
-                    <img src="https://via.placeholder.com/60x60/004d40/FFFFFF?text=FC" alt="Logo de Combinado FC">
-                    <h3>Combinado FC</h3>
-                </div>
-                <div class="match-details">
-                    <span class="vs">vs</span>
-                    <div class="opponent-info">
-                        <img src="https://via.placeholder.com/60x60/333333/FFFFFF?text=OPP" alt="Logo del oponente">
-                        <h3>Equipo Rival</h3>
-                    </div>
-                </div>
-                <div class="match-date">
-                    <p>Sábado, 28 de Septiembre</p>
-                    <p>16:00 hs</p>
-                    <p>Estadio de la Sede</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="latest-news">
-            <h2>ÚLTIMAS NOTICIAS</h2>
-            <div class="news-grid">
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/300x200/cccccc/333333?text=Noticia+1" alt="Imagen de la noticia 1">
-                    <h3>Victoria épica: Combinado FC gana el clásico</h3>
-                    <p>En un partido lleno de emoción, el equipo se llevó la victoria con un gol en el último minuto...</p>
-                    <a href="#">Leer más</a>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/300x200/cccccc/333333?text=Noticia+2" alt="Imagen de la noticia 2">
-                    <h3>Nuevo fichaje refuerza la defensa</h3>
-                    <p>El club anuncia la incorporación de un nuevo jugador para fortalecer la línea defensiva...</p>
-                    <a href="#">Leer más</a>
-                </div>
-
-                <div class="news-item">
-                    <img src="https://via.placeholder.com/300x200/cccccc/333333?text=Noticia+3" alt="Imagen de la noticia 3">
-                    <h3>Entrenamiento intensivo de cara al próximo partido</h3>
-                    <p>El plantel se prepara con todo para el siguiente desafío en el torneo...</p>
-                    <a href="#">Leer más</a>
-                </div>
-            </div>
-        </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Combinado FC</h1>
+    <p>La pasión que nos une</p>
+    <div class="hero-buttons">
+      <button>Próximo Partido</button>
+      <button>Último Resultado</button>
+      <button>Últimas Noticias</button>
     </div>
-    </main>
-    <footer>
-    <div class="footer-container">
-        <div class="footer-info">
-            <div class="logo-footer">
-                <img src="https://via.placeholder.com/60x60/004d40/FFFFFF?text=FC" alt="Logo Combinado FC">
-                <h3>Combinado FC</h3>
-            </div>
-            <p>La pasión por el fútbol que nos une. <br>¡Sigamos alentando juntos!</p>
-        </div>
-        <div class="footer-links">
-            <h4>Enlaces Rápidos</h4>
-            <ul>
-                <li><a href="equipo.html">Equipo</a></li>
-                <li><a href="calendario.html">Calendario</a></li>
-                <li><a href="noticias.html">Noticias</a></li>
-                <li><a href="tienda.html">Tienda</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <h4>Síguenos en Redes</h4>
-            <ul>
-                <li><a href="#" target="_blank">Instagram</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-bottom">
-        <p>&copy; 2025 Combinado FC. Todos los derechos reservados.</p>
-    </div>
-    </footer>
+  </section>
 
+  <!-- EQUIPO -->
+  <section id="equipo" class="section">
+    <h2>Nuestro Equipo</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="jugador1.jpg" alt="Jugador">
+        <h3>Jugador 1</h3>
+        <p>Delantero</p>
+      </div>
+      <div class="card">
+        <img src="jugador2.jpg" alt="Jugador">
+        <h3>Jugador 2</h3>
+        <p>Mediocampo</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO -->
+  <section id="calendario" class="section">
+    <h2>Calendario & Resultados</h2>
+    <table>
+      <tr><th>Fecha</th><th>Rival</th><th>Resultado</th></tr>
+      <tr><td>10/09</td><td>Equipo A</td><td>2 - 1</td></tr>
+      <tr><td>17/09</td><td>Equipo B</td><td>-</td></tr>
+    </table>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria" class="section">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <img src="camiseta1.jpg" alt="Camiseta">
+      <img src="camiseta2.jpg" alt="Camiseta">
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section id="noticias" class="section">
+    <h2>Últimas Noticias</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Victoria en el clásico</h3>
+        <p>Gran partido frente al rival histórico...</p>
+      </div>
+      <div class="card">
+        <h3>Nuevos refuerzos</h3>
+        <p>El plantel suma tres incorporaciones...</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section">
+    <h2>Contacto</h2>
+    <form>
+      <input type="text" placeholder="Nombre">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Combinado FC. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
