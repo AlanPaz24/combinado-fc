@@ -1,0 +1,114 @@
+/* Paleta de colores de Combinado FC */
+:root {
+    --color-principal: #004d40; /* Verde oscuro */
+    --color-acento: #ffc107; /* Amarillo/Dorado */
+    --color-secundario: #333333; /* Negro */
+    --color-texto-claro: #ffffff; /* Blanco */
+    --color-fondo-claro: #f0f2f5; /* Gris claro */
+}
+
+/* Estilos generales del cuerpo de la página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-secundario);
+}
+
+/* Contenedor principal para centrar el contenido */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* --- Estilos del Header --- */
+
+header {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+.top-bar {
+    padding: 15px 0;
+    background-color: var(--color-principal);
+    border-bottom: 1px solid var(--color-acento);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-texto-claro);
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.logo img {
+    margin-right: 10px;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav li {
+    margin: 0 15px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-texto-claro);
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-acento);
+}
+
+.header-icons a img {
+    width: 24px;
+    height: 24px;
+    margin-left: 20px;
+    filter: invert(1); /* Para que los iconos blancos se vean bien sobre el fondo oscuro */
+}
+
+.hero-section {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-text h1 {
+    font-size: 4em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+    font-size: 1.5em;
+    margin: 5px 0 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
