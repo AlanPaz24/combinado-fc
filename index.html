@@ -541,5 +541,19 @@
 
     // (En próximos pasos) Podemos agregar lógica para: próximo partido, último resultado y destacar link activo.
   </script>
+  <script>
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  const navbarCollapse = document.querySelector('.navbar-collapse');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (navbarCollapse.classList.contains('show')) {
+        new bootstrap.Collapse(navbarCollapse).toggle();
+      }
+    });
+  });
+</script>
+
+
 </body>
 </html>
