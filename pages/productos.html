@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda - Combinado FC</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="../index.html">Combinado FC</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#equipo">Equipo</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#partidos">Partidos</a></li>
+          <li class="nav-item"><a class="nav-link" href="galeria.html">Galería</a></li>
+          <li class="nav-item"><a class="nav-link active" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#noticias">Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="py-5 bg-dark text-white text-center mt-5">
+    <div class="container">
+      <h1 class="display-4">Tienda Oficial</h1>
+      <p>Compra la indumentaria de Combinado FC</p>
+    </div>
+  </header>
+
+  <!-- PRODUCTOS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Producto -->
+        <div class="col-md-4">
+          <div class="card h-100">
+            <img src="../img/productos/camiseta1.png" class="card-img-top" alt="Camiseta titular">
+            <div class="card-body text-center">
+              <h5 class="card-title">Camiseta Titular</h5>
+              <p class="card-text">$12.000</p>
+              <button class="btn btn-primary add-to-cart" data-name="Camiseta Titular" data-price="12000">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Más productos... -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CARRITO -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Carrito</h2>
+      <ul id="cart-items" class="list-group mb-3"></ul>
+      <h4>Total: $<span id="cart-total">0</span></h4>
+      <button class="btn btn-success">Finalizar compra</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-center text-white py-3">
+    <p>&copy; 2024 Combinado FC</p>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
